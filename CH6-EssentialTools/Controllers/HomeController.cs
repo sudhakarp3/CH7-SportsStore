@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Ninject;
 
 namespace CH6_EssentialTools.Controllers
 {
@@ -17,7 +18,11 @@ namespace CH6_EssentialTools.Controllers
         };
         public ActionResult Index()
         {
-            ILinqValueCalculator calcs = new ILinqValueCalculator();
+            IKernel ninjetKernel = new StandardKernel();
+            ninjetKernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
+            IValueCalculator calc = ninjetKernel.Get<IValueCalculator>();
+
+            LinqValueCalculator calcs = new LinqValueCalculator();
             ShoppingCart cart = new ShoppingCart(calcs) { Products = products };
             decimal totalValue = cart.CalculateProductTotal();
 
