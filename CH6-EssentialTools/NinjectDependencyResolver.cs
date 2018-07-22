@@ -27,9 +27,6 @@ namespace CH6_EssentialTools.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
-            kernel.Bind<IDiscountHelper>().To<DefaultDiscountHelper>().WithPropertyValue("paramDiscount", 50m);
-            kernel.Bind<IDiscountHelper>().To<FlexibleDiscountHelper>().WhenInjectedInto<LinqValueCalculator>();
-
         }
     }
 }
