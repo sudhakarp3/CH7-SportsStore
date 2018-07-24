@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Ninject.Web.Common;
+
 
 namespace CH6_EssentialTools.Infrastructure
 {
@@ -26,8 +28,12 @@ namespace CH6_EssentialTools.Infrastructure
         }
         private void AddBindings()
         {
-            kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
+            System.Diagnostics.Debug.WriteLine(string.Format("add binding 1...."));
+            kernel.Bind<IValueCalculator>().To<LinqValueCalculator>().InRequestScope();
+
+            System.Diagnostics.Debug.WriteLine(string.Format("add binding 2...."));
             kernel.Bind<IDiscountHelper>().To<DefaultDiscountHelper>().WithPropertyValue("paramDiscount", 50m);
+            System.Diagnostics.Debug.WriteLine(string.Format("add binding 3...."));
             kernel.Bind<IDiscountHelper>().To<FlexibleDiscountHelper>().WhenInjectedInto<LinqValueCalculator>();
 
         }
