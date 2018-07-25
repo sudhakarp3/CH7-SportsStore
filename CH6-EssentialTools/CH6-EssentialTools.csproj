@@ -187,6 +187,7 @@
     <Compile Include="Models\Discount.cs" />
     <Compile Include="Models\FlexibleDiscountHelper.cs" />
     <Compile Include="Models\LinqValueCalculator.cs" />
+    <Compile Include="Models\MinimumDiscountHelper.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\ValueCalculator.cs" />
