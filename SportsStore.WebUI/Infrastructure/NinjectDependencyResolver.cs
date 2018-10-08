@@ -39,4 +39,7 @@ namespace SportsStore.WebUI.Infrastructure
                 new Product { Name = "Running shoes", Price = 95 }
             });
 
-            kernel.Bind<IProductRepository>().ToConstant(mock.Object)}
+            kernel.Bind<IProductRepository>().ToConstant(mock.Object);
+        }
+    }
+}
