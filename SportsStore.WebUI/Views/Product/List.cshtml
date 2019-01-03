@@ -1,9 +1,11 @@
 ﻿@using SportsStore.Domain.Entities
+@model SportsStore.WebUI.Models.ProductsListViewModel
+
 @model IEnumerable<Product>
 @{
     ViewBag.Title = "Products";
 }
-@foreach(var p in Model)
+@foreach (var p in Model.Products)
 {
     <div>
         <h3>@p.Name</h3>
