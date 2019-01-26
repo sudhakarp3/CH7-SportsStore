@@ -26,9 +26,17 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+                <div class="top-right"  >
+
+                    @Html.Action("Summary", "Cart")
+                </div>
             </div>
+            
         </div>
+        
     </div>
+
+
     <div class="row panel">
         <div id="categories" class="col-xs-3">
             @Html.Action("Menu", "Nav")
