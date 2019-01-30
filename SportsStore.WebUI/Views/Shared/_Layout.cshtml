@@ -45,9 +45,12 @@
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
             </ul>
             <div class="top-right">
-
                 @Html.Action("Summary", "Cart")
             </div>
+            <div class="visible-xs">
+                @Html.Action("Menu", "Nav", new { horizontalLayout = true })
+            </div>
+
         </div>
 
     </div>
