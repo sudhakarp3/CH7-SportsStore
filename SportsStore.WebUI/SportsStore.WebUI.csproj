@@ -271,6 +271,7 @@
     <Content Include="Views\Nav\FlexMenu.cshtml" />
     <Content Include="Views\Shared\_Layout.mobile.cshtml" />
     <Content Include="Views\Nav\FlexMenu.mobile.cshtml" />
+    <Content Include="Views\Shared\ProductSummary.mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
