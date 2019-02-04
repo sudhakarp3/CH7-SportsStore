@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SportsStore.Domain.Abstract;
-
+using SportsStore.Domain.Entities;
 
 namespace SportsStore.WebUI.Controllers
 {
@@ -21,5 +21,12 @@ namespace SportsStore.WebUI.Controllers
         {
             return View(repository.Products);
         }
+        public ViewResult Edit(int productId)
+        {
+            Product product = repository.Products
+                .FirstOrDefault(p => p.ProductID == productId);
+            return View(product);
+        }
+
     }
 }
